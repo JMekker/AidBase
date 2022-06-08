@@ -10,45 +10,44 @@
 	<div class="list-container">
 		<button onclick="history.go(-1);" class="back">Back</button>
 		<?php
+            $sql = "SELECT * FROM NGO WHERE ";
+
+            
+                    // Setting the searchbox into the search query
                 if (isset($_POST['submit-search'])) {
                     if (isset($_POST['searchbox1'])) {
-                        $search1 = mysqli_real_escape_string($conn, $_POST['searchbox1']);
-                    } else {
-                        $search1 = "";
+                        $search = mysqli_real_escape_string($conn, $_POST['searchbox1']);
                     }
                     if (isset($_POST['searchbox2'])) {
-                        $search2 = mysqli_real_escape_string($conn, $_POST['searchbox2']);
-                    } else {
-                        $search2 = "";
+                        $search = mysqli_real_escape_string($conn, $_POST['searchbox2']);
                     }
+                    $sql .= "ngo_name like '%$search%' OR website LIKE '%$search%'";
+
+
+                    // Setting country into the search query
                     if (isset($_POST['country'])) {
                         $country = $_POST['country'];
+                        $sql .= " OR country LIKE '%$country%'";
                     }
+
+
+                    // Setting SDGs into the search query
                     if (isset($_POST['sdg'])) {
                         $sdg = $_POST['sdg'];
-                    }
-                    $sdgsChosen = "";
-                    if (!empty($sdg)) {
                         $N = count($sdg);
-                        for ($i=0; $i < $N; $i++) {
+                        $sdgsChosen = "";
+                        for ($i = 0; $i < $N; $i++) {
                             $sdgsChosen = $sdgsChosen . $sdg[$i] . " ";
                         }
-                        $sql = "SELECT * FROM NGO WHERE
-						    ngo_name like '%$search2%' OR
-						    ngo_description LIKE '%$search2%' OR
-						    website LIKE '%$search2%' OR ";
-                        if ($_POST['country'] != 0) {
-                            $sql .= "country LIKE '%$country%' OR ";
-                        }
-                        $sql .= "tags LIKE '%$sdgsChosen%';";
-                        echo $sql;
+                        $sql .= " OR tags LIKE '%$sdgsChosen%'";
                     } else {
-                        $sql = "SELECT * FROM NGO WHERE
-                            ngo_name like '%$search1%' OR
-                            ngo_description LIKE '%$search1%' OR
-                            website LIKE '%$search1%' OR
-                            tags LIKE '%$search1%';";
+                        $sql .= " OR tags LIKE '%$search%'";
                     }
+
+
+                    $sql .= " OR ngo_description like '%$search%' OR ngo_description LIKE '%$sdgsChosen%' OR ngo_description LIKE '%$country%';";
+                    // $sql .= ";";
+                    echo $sql;
                     $result = mysqli_query($conn, $sql);
                     $queryResult = mysqli_num_rows($result);
                     if ($queryResult == 1) {
@@ -59,7 +58,6 @@
                         echo "There are " . $queryResult . " results.";
                     }
                     if ($queryResult > 0) {
-                        echo "<h4>" . $queryResult . "</h4>";
                         $row = mysqli_fetch_assoc($result);
                         while ($row) {
                             echo "<div class='ngo-box'><br>
@@ -70,19 +68,6 @@
 						    <p>" . $row['tags'] . "</p>
 						    </div>";
                         }
-                    }
-                } else {
-                    $sql = "SELECT * FROM NGO;";
-                    $result = mysqli_query($conn, $sql);
-                    $resultCheck = mysqli_num_rows($result);
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<div class='ngo-box'><br>
-						<a href='ngo.php?t=" . $row['entry_id'] ."'>
-						<h4>" . $row['ngo_name'] . "</h4></a><br>
-						<p>" . $row['ngo_description'] . "</p><br>
-						<p>Tags:</p>
-						<p>" . $row['tags'] . "</p>
-						</div>";
                     }
                 }
             ?>
