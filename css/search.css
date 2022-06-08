@@ -1,0 +1,301 @@
+:root {
+    --primary-bg-color: rgb(243, 243, 243);
+    --secondary-bg-color_light: rgb(200, 243, 222);
+    --secondary-bg-color: rgb(190, 224, 213);
+    --secondary-bg-color_vibrant1: rgb(52, 196, 124);
+    --secondary-bg-color_vibrant2: rgb(24, 141, 24);
+    --secondary-blue-color_vibrant: rgb(52, 196, 224);
+    --primary-blue-color: rgb(78, 111, 202);
+}
+
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Open Sans"), local("OpenSans"),
+        url("http://themes.googleusercontent.com/static/fonts/opensans/v5/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff")
+            format("woff");
+}
+
+html {
+    padding-top: 2%;
+}
+
+body {
+    background-color: var(--primary-bg-color);
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    padding: 0 60px 60px 60px;
+    background-image: linear-gradient(
+        rgb(52, 196, 224),
+        rgba(255, 0, 0, 0) 500px
+    );
+    height: 100rem;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 4.2rem;
+    font-weight: lighter;
+    margin: auto;
+}
+
+h2 {
+    font-size: 3.157rem;
+    font-weight: lighter;
+    margin: auto;
+}
+
+h3 {
+    font-size: 2.4rem;
+    font-weight: normal;
+    margin: auto;
+}
+
+h4 {
+    font-size: 1.7rem;
+    font-weight: normal;
+    margin: auto;
+}
+
+h5 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: auto;
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: auto;
+}
+
+p {
+    font-size: 1rem;
+    margin: auto;
+}
+
+.page-content {
+    width: auto;
+    background-color: var(--secondary-bg-color);
+    padding: 2%;
+    border: 0px solid;
+    border-radius: 50px;
+}
+
+.ngo-box {
+    padding-bottom: 2%;
+    border-radius: 2%;
+}
+
+.ngo-box > p {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+input.searchbox {
+    margin: auto 0 auto 37.5%;
+    padding: 0px 12px;
+    width: 250px;
+    height: 32px;
+    font-size: 22px;
+    border: 0px solid var(--secondary-bg-color);
+    border-radius: 10px;
+}
+
+button.searchbox {
+    width: 150px;
+    height: 32px;
+    font-size: 22px;
+    border: 0px solid var(--secondary-bg-color);
+    border-radius: 10px;
+}
+button.searchbox:hover {
+    background-color: var(--primary-bg-color);
+    border: 1px solid black;
+}
+
+button.back {
+    width: 9%;
+    height: 32px;
+    font-size: 22px;
+    border: 0px solid var(--secondary-bg-color);
+    border-radius: 10px;
+    margin: 0 1% 0 1%;
+}
+button.back:hover {
+    background-color: var(--primary-bg-color);
+    border: 1px solid black;
+}
+
+button.search-nav {
+    width: 120px;
+    height: 40px;
+    font-size: 22px;
+    color: var(--primary-bg-color);
+    border: 1px solid var(--primary-blue-color);
+    border-radius: 10px;
+    background-color: var(--primary-blue-color);
+}
+
+button.search-nav:hover {
+    color: black;
+    background-color: #fff;
+    border: 1px solid black;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.buttons > div {
+    margin: 0 20px 0 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: var(--secondary-bg-color_vibrant2);
+}
+
+a:visited {
+    color: var(--secondary-bg-color_vibrant2);
+}
+
+a:hover {
+    color: var(--primary-blue-color);
+}
+
+a:active {
+    color: var(--primary-blue-color);
+}
+
+hr.advanced {
+    overflow: visible;
+    margin: 2% auto 1% auto;
+    width: 90%;
+    border: none;
+    height: 1px;
+    background-image: linear-gradient(
+        to right,
+        rgba(24, 141, 24, 0),
+        rgba(24, 141, 24, 0.75),
+        rgba(24, 141, 24, 0)
+    );
+    text-align: center;
+}
+
+hr.advanced:after {
+    content: "Advanced Search";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1em;
+    padding: 0 0.55em;
+    background: var(--secondary-bg-color);
+}
+
+hr.advanced2 {
+    overflow: visible;
+    margin: 2% auto 1% auto;
+    width: 90%;
+    border: none;
+    height: 1px;
+    background-image: linear-gradient(
+        to right,
+        rgba(24, 141, 24, 0),
+        rgba(24, 141, 24, 0.75),
+        rgba(24, 141, 24, 0)
+    );
+    text-align: center;
+}
+
+hr.advanced2:after {
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1em;
+    padding: 0 0.55em;
+    background: var(--secondary-bg-color);
+}
+
+hr.advanced:hover {
+    cursor: pointer;
+    width: 100%;
+    color: var(--primary-blue-color);
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px solid rgba(0, 0, 0, 0);
+}
+
+.advanced-dropdown {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px solid rgba(0, 0, 0, 0);
+}
+
+.searchDropdown > h4 {
+    text-align: center;
+}
+
+.sdgs {
+    display: flex;
+    width: 100%;
+}
+
+.sdgs-title {
+    width: 100%;
+}
+
+section {
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+section#section4 {
+    margin: 0px 0px 0px 37.5%;
+    width: 50%;
+}
+
+select#country {
+    margin: 22px 0px 0px 0px;
+    padding: 0px 8px;
+    width: 50%;
+    height: 32px;
+    font-size: 22px;
+    border: 0px solid var(--secondary-bg-color);
+    border-radius: 10px;
+}
+
+select#country:hover {
+    background-color: var(--primary-bg-color);
+    border: 1px solid black;
+}
+
+#myVideo {
+    z-index: -1;
+    opacity: 17%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}

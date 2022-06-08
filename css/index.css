@@ -1,0 +1,218 @@
+:root {
+    --primary-bg-color: rgb(243, 243, 243);
+    --secondary-bg-color_light: rgb(200, 243, 222);
+    --secondary-bg-color: rgb(190, 224, 213);
+    --secondary-bg-color_vibrant1: rgb(52, 196, 124);
+    --secondary-bg-color_vibrant2: rgb(24, 141, 24);
+    --secondary-blue-color_vibrant: rgb(52, 196, 224);
+    --primary-blue-color: rgb(78, 111, 202);
+}
+
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Open Sans"), local("OpenSans"),
+        url("http://themes.googleusercontent.com/static/fonts/opensans/v5/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff")
+            format("woff");
+}
+
+html {
+    padding-top: 2%;
+}
+
+body {
+    background-color: var(--primary-bg-color);
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    padding: 0 60px 60px 60px;
+    background-image: linear-gradient(
+        rgb(52, 196, 224),
+        rgba(255, 0, 0, 0) 500px
+    );
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 4.2rem;
+    font-weight: lighter;
+    margin: auto;
+}
+
+h2 {
+    font-size: 3.157rem;
+    font-weight: lighter;
+    margin: auto;
+}
+
+h3 {
+    font-size: 2.4rem;
+    font-weight: normal;
+    margin: auto;
+}
+
+h4 {
+    font-size: 1.7rem;
+    font-weight: normal;
+    margin: auto;
+}
+
+h5 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: auto;
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: auto;
+}
+
+p {
+    font-size: 1rem;
+    margin: auto;
+}
+
+.page-content {
+    width: auto;
+    padding: 2%;
+    border: 0px solid;
+    border-radius: 50px;
+}
+
+.signup-form {
+    width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+.signup-form > h2 {
+    margin-bottom: 5%;
+}
+
+.signup-form > p {
+    margin-bottom: 5%;
+}
+
+.signup-form > form > input {
+    width: 400px;
+    display: block;
+    margin-bottom: 5%;
+    padding: 0px 1%;
+    height: 32px;
+    font-size: 22px;
+    border: 1px solid #a3e3c3;
+    border-radius: 10px;
+}
+
+.signup-form > form > button {
+    width: 30%;
+    height: 32px;
+    font-size: 22px;
+    background-color: var(--primary-blue-color);
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+.signup-form > form > button:hover {
+    color: black;
+    background-color: #fff;
+    border: 1px solid black;
+}
+
+div.search-nav {
+    width: auto;
+    height: 32px;
+}
+
+button.search-nav {
+    width: 120px;
+    height: 40px;
+    font-size: 22px;
+    color: #fff;
+    border: 1px solid var(--primary-blue-color);
+    border-radius: 10px;
+    background-color: var(--primary-blue-color);
+}
+
+button.search-nav:hover {
+    color: black;
+    background-color: #fff;
+    border: 1px solid black;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.buttons > div {
+    margin: 0 20px 0 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: rgb(24, 141, 24);
+}
+
+a:visited {
+    color: rgb(24, 141, 24);
+}
+
+a:hover {
+    color: var(--primary-blue-color);
+}
+
+a:active {
+    color: var(--primary-blue-color);
+}
+
+hr {
+    overflow: visible;
+    margin: 2% auto 1% auto;
+    width: 90%;
+    border: none;
+    height: 1px;
+    background-image: linear-gradient(
+        to right,
+        rgba(24, 141, 24, 0),
+        rgba(24, 141, 24, 0.75),
+        rgba(24, 141, 24, 0)
+    );
+    text-align: center;
+}
+
+hr:after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1em;
+    padding: 0 0.55em;
+    background: var(--secondary-bg-color);
+}
+
+#myVideo {
+    z-index: -1;
+    opacity: 17%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
