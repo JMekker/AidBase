@@ -1,1 +1,2 @@
+# redirect index.html to index.php since the site runs on PHP
 /index.html		/index.php
